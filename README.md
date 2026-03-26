@@ -23,10 +23,14 @@ We are trying to give people a way to surface what's happening, so communities s
 
 ## Contributing
 
-We welcome developers, designers, and anyone with ideas. Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
- 
-To contribute:
+We welcome developers, designers, and anyone with ideas.
 
+To contribute:
+1. Browse the [open issues](https://github.com/Pydata-Lagos/SafeRoute/issues) and claim one by leaving a comment
+2. If you have a new idea, open an issue first so we can discuss it before you build
+3. Fork the repo, make your changes, and open a pull request referencing the issue
+
+Not sure where to start? Join our community [here](https://chat.whatsapp.com/EXlKG60lvzQBvvs1bawiOx) and ask questions to stay in the loop
 
 ## Credits
  
