@@ -51,7 +51,17 @@ class ReportAuditLogRepository:
         stmt = (
             select(ReportAuditLog)
             .where(ReportAuditLog.report_id == report_id)
-            .order_by(ReportAuditLog.created_at.desc())
+            .order_by(ReportAuditLog.created_at.desc(), ReportAuditLog.id.desc())
+        )
+        result = await self.session.execute(stmt)
+        return result.scalars().all()
+
+    async def get_by_actor_id(self, actor_id: uuid.UUID) -> Sequence[ReportAuditLog]:
+        """Fetch the audit trail for a user, most recent first"""
+        stmt = (
+            select(ReportAuditLog)
+            .where(ReportAuditLog.actor_id == actor_id)
+            .order_by(ReportAuditLog.created_at.desc(), ReportAuditLog.id.desc())
         )
         result = await self.session.execute(stmt)
         return result.scalars().all()
