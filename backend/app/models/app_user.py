@@ -30,7 +30,10 @@ class AppUser(TimestampMixin, Base):
     # Relationships
     submitted_reports: Mapped[list["Report"]] = relationship(
         back_populates="reporter",
-        foreign_keys="Report.reporter_id",
+        foreign_keys="[Report.reporter_id]",
+    )
+    approved_reports: Mapped[list["Report"]] = relationship(
+        back_populates="approver", foreign_keys="[Report.approver_id]"
     )
 
     def __repr__(self) -> str:

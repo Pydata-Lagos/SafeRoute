@@ -66,8 +66,8 @@ class Report(Base, TimestampMixin):
         back_populates="approved_reports", foreign_keys=[approver_id]
     )
     location: Mapped["Location"] = relationship(back_populates="reports")
-    media: Mapped["list[Media]"] = relationship(back_populates="report")
-    audit_logs: Mapped["list[ReportAuditLog]"] = relationship(back_populates="report")
+    media: Mapped[list["Media"]] = relationship(back_populates="report")
+    audit_logs: Mapped[list["ReportAuditLog"]] = relationship(back_populates="report")
 
     def __repr__(self) -> str:
         return f"<Report {self.reference_no}>"
